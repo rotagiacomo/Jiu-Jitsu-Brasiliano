@@ -25,4 +25,8 @@ public class Nodo {
     public String toString(){
         return contenuto.toString();
     }
+
+    public int compareTo(Nodo nodo){
+        return contenuto.compareTo(nodo.contenuto);
+    }
 }
