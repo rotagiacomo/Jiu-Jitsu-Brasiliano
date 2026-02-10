@@ -1,38 +1,41 @@
 public class Lista {
     private Nodo head;
 
-    public void aggiungiInTesta(Nodo nodo){
-        nodo.setNextNodo(head);
-        head = nodo;
+    public void aggiungiInTesta(Comparable contenuto){
+        Nodo newNodo = new Nodo(contenuto);
+        newNodo.setNextNodo(head);
+        head = newNodo;
     }
 
-    public void aggiungiInCoda(Nodo nodo){
+    public void aggiungiInCoda(Comparable contenuto){
+        Nodo newNodo = new Nodo(contenuto);
         if (head == null) {
-            aggiungiInTesta(nodo);
+            aggiungiInTesta(contenuto);
         }else{
             Nodo cursor = raggiungiIndice(getSize()-1);
-            cursor.setNextNodo(nodo);
+            cursor.setNextNodo(newNodo);
         }
     }
 
-    public void aggiungiOrdinato(Nodo nodo){
-        if(head == null || nodo.compareTo(head) < 0){
-            aggiungiInTesta(nodo);
+    public void aggiungiOrdinato(Comparable contenuto){
+        Nodo newNodo = new Nodo(contenuto);
+        if(head == null || newNodo.compareTo(head) < 0){
+            aggiungiInTesta(contenuto);
         }else{
             Nodo cursor = head;
             while (cursor.getNextNodo() != null) {
-                if (nodo.compareTo(cursor.getNextNodo()) < 0) {
-                    nodo.setNextNodo(cursor.getNextNodo());
-                    cursor.setNextNodo(nodo);
+                if (newNodo.compareTo(cursor.getNextNodo()) < 0) {
+                    newNodo.setNextNodo(cursor.getNextNodo());
+                    cursor.setNextNodo(newNodo);
                     return;
                 }
                 cursor = cursor.getNextNodo();
             }
-            cursor.setNextNodo(nodo);
+            cursor.setNextNodo(newNodo);
         }
     }
 
-    public Nodo raggiungiIndice(int indice){
+    private Nodo raggiungiIndice(int indice){
         Nodo cursor = head;
         for(int i=0; i<indice; i++){
             cursor = cursor.getNextNodo();

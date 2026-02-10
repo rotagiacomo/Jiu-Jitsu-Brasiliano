@@ -6,10 +6,10 @@ public class Main {
         Tecnica quarTecnica = new Tecnica(Tecnica.Difficolta.CINQUE);
 
         Lista lista = new Lista();
-        lista.aggiungiOrdinato(new Nodo(quarTecnica));
-        lista.aggiungiOrdinato(new Nodo(secondTecnica));
-        lista.aggiungiOrdinato(new Nodo(terzTecnica));
-        lista.aggiungiOrdinato(new Nodo(primaTecnica));
+        lista.aggiungiOrdinato(terzTecnica);
+        lista.aggiungiOrdinato(primaTecnica);
+        lista.aggiungiOrdinato(quarTecnica);
+        lista.aggiungiOrdinato(secondTecnica);
         System.out.println(lista);
     }
 }

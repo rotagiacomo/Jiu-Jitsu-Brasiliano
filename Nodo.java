@@ -1,8 +1,8 @@
-public class Nodo {
+public class Nodo implements Comparable {
     private Nodo nextNodo;
-    private Tecnica contenuto;
+    private Comparable contenuto;
 
-    public Nodo(Tecnica contenuto){
+    public Nodo(Comparable contenuto) {
         this.contenuto = contenuto;
     }
 
@@ -10,7 +10,7 @@ public class Nodo {
         this.nextNodo = nextNodo;
     }
 
-    public void setContenuto(Tecnica contenuto) {
+    public void setContenuto(Comparable contenuto) {
         this.contenuto = contenuto;
     }
 
@@ -18,15 +18,16 @@ public class Nodo {
         return nextNodo;
     }
 
-    public Tecnica getContenuto() {
+    public Comparable getContenuto() {
         return contenuto;
     }
 
-    public String toString(){
+    public String toString() {
         return contenuto.toString();
     }
 
-    public int compareTo(Nodo nodo){
-        return contenuto.compareTo(nodo.contenuto);
+    public int compareTo(Comparable other) {
+        Nodo otherNodo = (Nodo) other;
+        return contenuto.compareTo(otherNodo.contenuto);
     }
 }

@@ -1,4 +1,4 @@
-public class Tecnica{
+public class Tecnica implements Comparable{
     private Difficolta difficolta;
 
     public enum Difficolta{
@@ -17,8 +17,10 @@ public class Tecnica{
         return difficolta;
     }
 
-    public int compareTo(Tecnica tecnica){
-        return this.difficolta.compareTo(tecnica.difficolta); // <0 se this viene prima di tecnica, = 0 se uguale, >0 se viene dopo
+    @Override
+    public int compareTo(Comparable other) {
+        Tecnica otherTecnica = (Tecnica) other;
+        return difficolta.compareTo(otherTecnica.difficolta);
     }
 
     public String toString(){
