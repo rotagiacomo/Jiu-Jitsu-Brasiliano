@@ -11,5 +11,10 @@ public class Main {
         lista.aggiungiOrdinato(quarTecnica);
         lista.aggiungiOrdinato(secondTecnica);
         System.out.println(lista);
+
+        Iteratore iteratore = lista.getIteratore();
+        while (iteratore.hasNext()){
+            System.out.println(iteratore.next()); //non stampa l'ultimo elemento della lista
+        }
     }
 }

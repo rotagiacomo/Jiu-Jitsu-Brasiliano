@@ -53,6 +53,14 @@ public class Lista {
         return size;
     }
 
+    public Nodo getHead(){
+        return head;
+    }
+
+    public Iteratore getIteratore(){
+        return new Iteratore(this);
+    }
+
     public String toString(){
         Nodo cursor = head;
         String string = "";
