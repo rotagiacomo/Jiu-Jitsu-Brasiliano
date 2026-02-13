@@ -14,7 +14,8 @@ public class Main {
 
         Iteratore iteratore = lista.getIteratore();
         while (iteratore.hasNext()){
-            System.out.println(iteratore.next()); //non stampa l'ultimo elemento della lista
+            System.out.println(iteratore.next());
+
         }
     }
 }

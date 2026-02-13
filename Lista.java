@@ -58,7 +58,7 @@ public class Lista {
     }
 
     public Iteratore getIteratore(){
-        return new Iteratore(this);
+        return new Iteratore(this.head);
     }
 
     public String toString(){

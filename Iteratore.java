@@ -1,14 +1,11 @@
 public class Iteratore {
-    private Lista iterabile;
     private Nodo cursor;
-
-    public Iteratore(Lista lista){
-        iterabile = lista;
-        cursor = lista.getHead();
+    public Iteratore(Nodo head){
+        this.cursor = head;
     }
 
     public boolean hasNext(){
-        return cursor.getNextNodo() != null;
+        return cursor != null;
     }
 
     public Nodo next(){
